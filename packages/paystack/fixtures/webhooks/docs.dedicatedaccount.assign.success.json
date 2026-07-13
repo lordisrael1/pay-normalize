@@ -1,0 +1,1 @@
+{"event":"dedicatedaccount.assign.success","data":{"customer":{"id":100110,"email":"member@parish.org","customer_code":"CUS_hns7229"},"dedicated_account":{"bank":{"name":"Titan Paystack","id":78,"slug":"titan-paystack"},"account_name":"PARISH/MEMBER","account_number":"9930001234","assigned":true,"currency":"NGN","active":true},"identification":{"status":"success"}}}

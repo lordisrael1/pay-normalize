@@ -1,0 +1,1 @@
+{"eventType":"LOW_BALANCE_ALERT","eventData":{"transactionTime":"2025-09-01T23:13:19Z","merchantCode":"99ZYAFM0F3CY","walletAccountNumber":"8023759978","walletBalance":0,"lowBalanceThreshold":2000,"currency":"NGN","description":"Your wallet balance has dropped below the configured threshold. Please fund your account."}}

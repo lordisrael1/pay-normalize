@@ -1,0 +1,24 @@
+{
+  "_note": "Known documentation-example values that appear in fixtures. The PII guard (scripts/check-fixtures-pii.mjs) FAILS CI on any fixture PII value not listed here. Adding an entry is a conscious statement, on the record in git history, that the value is fake / provider-doc-derived and NOT real customer data. Per NOT_DOING.md §11, an unsanitized real payload is a project-ending event — this list is the gate that stops one being pasted in.",
+  "emails": [
+    "member@parish.org",
+    "treasurer@parish.org",
+    "cornelius@devxpay.com",
+    "bojack@horsinaround.com",
+    "olaobajua@gmail.com",
+    "demo@test.com",
+    "stephen@ikhane.com",
+    "mayluv55@hotmail.co.uk",
+    "benji71@gmail.com",
+    "james@example.com",
+    "111222333@ZZAMZ4WT4Y3E.monnify",
+    "segunadeponle@gmail.com",
+    "test@tester.com",
+    "ogunnaike.damilare@gmail.com"
+  ],
+  "phones": [
+    "08166189142",
+    "08088523241"
+  ],
+  "numbers": []
+}
