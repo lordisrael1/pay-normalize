@@ -28,6 +28,13 @@
   "author": "",
   "license": "ISC",
   "description": "Nomba connector for pay-normalize: webhooks and transaction-record API responses (EXPERIMENTAL).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordisrael1/pay-normalize.git",
+    "directory": "packages/nomba"
+  },
+  "bugs": "https://github.com/lordisrael1/pay-normalize/issues",
+  "homepage": "https://github.com/lordisrael1/pay-normalize/tree/main/packages/nomba#readme",
   "publishConfig": {
     "access": "public"
   },

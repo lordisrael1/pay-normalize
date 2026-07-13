@@ -28,6 +28,13 @@
   "author": "",
   "license": "ISC",
   "description": "Paystack connector for pay-normalize: webhooks and verify-transaction responses (EXPERIMENTAL).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordisrael1/pay-normalize.git",
+    "directory": "packages/paystack"
+  },
+  "bugs": "https://github.com/lordisrael1/pay-normalize/issues",
+  "homepage": "https://github.com/lordisrael1/pay-normalize/tree/main/packages/paystack#readme",
   "publishConfig": {
     "access": "public"
   },

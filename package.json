@@ -6,6 +6,12 @@
     "packages/*",
     "examples/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordisrael1/pay-normalize.git"
+  },
+  "bugs": "https://github.com/lordisrael1/pay-normalize/issues",
+  "homepage": "https://github.com/lordisrael1/pay-normalize#readme",
   "scripts": {
     "test": "vitest run",
     "test:mutation": "stryker run",
