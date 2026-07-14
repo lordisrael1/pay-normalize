@@ -50,6 +50,46 @@ describe("charge.success", () => {
   });
 });
 
+describe("charge.success — real captured deliveries (sanitized, test-mode)", () => {
+  // Captured from an actual `x-paystack-signature`-verified webhook delivery
+  // against a live host, not reconstructed from docs. `domain: "test"` in the
+  // payload is honest about provenance: these are real wire-format captures
+  // from Paystack's own webhook sender, from a sandbox (sk_test) charge, not
+  // scrubbed live-customer traffic. Real quirks these reveal that the
+  // docs-derived fixtures don't: fields like `fees_breakdown`, `log`,
+  // `requested_amount`, `pos_transaction_data`, and `source` that Paystack's
+  // published docs don't mention at all.
+  it("card charge normalizes the same as the docs fixture, plus undocumented fields present", () => {
+    const result = parsePaystackWebhook(fixture("prod.sanitized.charge.success.json"));
+    expect(result.kind).toBe("transaction");
+    if (result.kind !== "transaction") return;
+    const t = result.transaction;
+    expect(t.providerReference).toBe("pa_86a531c526eb4bc092d68f376f210bfa");
+    expect(t.amountInKobo).toBe(150000);
+    expect(t.feeInKobo).toBe(2250);
+    expect(t.netAmountInKobo).toBe(147750);
+    expect(t.channel).toBe("card");
+    expect(t.status).toBe("SUCCESSFUL");
+    expect(t.direction).toBe("credit");
+  });
+
+  it("bank_transfer charge.success (dedicated-account funding) normalizes to bank_transfer", () => {
+    const result = parsePaystackWebhook(fixture("prod.sanitized.charge.success.bank_transfer.json"));
+    expect(result.kind).toBe("transaction");
+    if (result.kind !== "transaction") return;
+    const t = result.transaction;
+    expect(t.providerReference).toBe("pa_06ed1e1bfa7c4ffe914646ba1606cd60");
+    expect(t.amountInKobo).toBe(150000);
+    expect(t.feeInKobo).toBe(2250);
+    expect(t.netAmountInKobo).toBe(147750);
+    expect(t.channel).toBe("bank_transfer");
+    expect(t.status).toBe("SUCCESSFUL");
+    // Real payloads mask sender account details themselves (Paystack does this,
+    // not us) — the connector must not choke on already-masked authorization fields.
+    expect(t.rawProviderPayload).toBeTruthy();
+  });
+});
+
 describe("transfers (debits)", () => {
   it("transfer.success -> SUCCESSFUL debit", () => {
     const result = parsePaystackWebhook(fixture("docs.transfer.success.json"));

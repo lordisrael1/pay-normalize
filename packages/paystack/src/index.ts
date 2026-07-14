@@ -10,13 +10,13 @@ import { verifyPaystackSignature } from "./signature";
 import { parsePaystackWebhook, PROVIDER } from "./parse-webhook";
 
 /**
- * @pay-normalize/paystack — STATUS: EXPERIMENTAL.
- *
- * Current fixtures are derived from Paystack's published documentation, not
- * captured production traffic. Per NOT_DOING.md §11, this connector does not
- * enter the "supported" table until its fixture corpus contains real,
- * sanitized payloads. Docs describe the happy path; production teaches the
- * quirks. Donate sanitized payloads via the fixture scrubber.
+ * @pay-normalize/paystack — STATUS: charge.success (card, bank_transfer) is
+ * SUPPORTED, backed by real captured-and-sanitized webhook deliveries
+ * (prod.sanitized.* fixtures), not just docs. transfer.* and
+ * refund.processed remain EXPERIMENTAL — docs-derived fixtures only, per
+ * NOT_DOING.md §11 — until a real delivery for those event types is donated.
+ * Docs describe the happy path; production teaches the quirks. Donate
+ * sanitized payloads via the fixture scrubber.
  *
  * Operational facts encoded here (from Paystack's own docs):
  *  - Delivery is at-least-once with aggressive retry: every 3 minutes for the

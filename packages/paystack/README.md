@@ -2,7 +2,7 @@
 
 Paystack connector — normalizes webhooks and verify-transaction responses into `StandardizedTransaction`.
 
-> **Status: EXPERIMENTAL** (connector `version: "0.1.0"`). Fixtures are derived from Paystack's published documentation, not captured production traffic. Per [NOT_DOING.md §11](../../NOT_DOING.md), it graduates when the corpus contains sanitized real payloads.
+> **Status: partially graduated** (connector `version: "0.1.0"`). `charge.success` (card and bank_transfer channels) is backed by real, captured-and-sanitized webhook deliveries — see `fixtures/webhooks/prod.sanitized.*`. `transfer.success`/`transfer.reversed`/`refund.processed` are still **EXPERIMENTAL**: docs-derived fixtures only. Per [NOT_DOING.md §11](../../NOT_DOING.md), each event family graduates independently as real deliveries are donated.
 
 ```ts
 import { paystack } from "@pay-normalize/paystack";

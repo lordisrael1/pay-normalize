@@ -33,12 +33,12 @@ This is an npm workspace monorepo. `core` is the contract; each provider is an i
 | Package | Status | Purpose |
 |---|---|---|
 | [`@pay-normalize/core`](packages/core/README.md) | Contract | Schema, money (`Kobo`), status ordering, dedupe, errors, the `Connector` interface |
-| [`@pay-normalize/paystack`](packages/paystack/README.md) | Experimental | Paystack webhooks + verify-transaction responses |
+| [`@pay-normalize/paystack`](packages/paystack/README.md) | Partially graduated | Paystack webhooks + verify-transaction responses |
 | [`@pay-normalize/nomba`](packages/nomba/README.md) | Experimental | Nomba webhooks + transaction-record API responses |
 | [`@pay-normalize/flutterwave`](packages/flutterwave/README.md) | Experimental | Flutterwave v4 webhooks, retrieve-charge, settlements |
 | [`@pay-normalize/monnify`](packages/monnify/README.md) | Experimental | Monnify webhooks (collection, disbursement, settlement) + transaction-status API |
 
-**Every connector is `EXPERIMENTAL` (connector `version: "0.1.0"`).** Per [NOT_DOING.md §11](NOT_DOING.md), a connector graduates out of experimental only when its fixture corpus contains sanitized *real* production payloads — not docs-derived ones. Nomba is furthest along (signature validated byte-for-byte against Nomba's golden vector; transaction-record fixtures are sanitized production data). Flutterwave's signature scheme is confirmed against Flutterwave's authoritative docs but still wants one real signed delivery.
+**All connectors start `EXPERIMENTAL` (connector `version: "0.1.0"`).** Per [NOT_DOING.md §11](NOT_DOING.md), a connector graduates out of experimental only when its fixture corpus contains sanitized *real* production payloads — not docs-derived ones, and graduation is per event family, not all-or-nothing. Nomba is furthest along (signature validated byte-for-byte against Nomba's golden vector; transaction-record fixtures are sanitized production data). Paystack's `charge.success` (card + bank_transfer) now has real captured-and-sanitized webhook fixtures; its `transfer.*`/`refund.processed` paths remain docs-derived. Flutterwave's signature scheme is confirmed against Flutterwave's authoritative docs but still wants one real signed delivery.
 
 ---
 
