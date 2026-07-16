@@ -13,7 +13,7 @@ import { parsePaystackWebhook, PROVIDER } from "./parse-webhook";
  * @pay-normalize/paystack — STATUS: charge.success (card, bank_transfer) is
  * SUPPORTED, backed by real captured-and-sanitized webhook deliveries
  * (prod.sanitized.* fixtures), not just docs. transfer.* and
- * refund.processed remain EXPERIMENTAL — docs-derived fixtures only, per
+ * refund.processed are backed by docs-derived fixtures only, per
  * NOT_DOING.md §11 — until a real delivery for those event types is donated.
  * Docs describe the happy path; production teaches the quirks. Donate
  * sanitized payloads via the fixture scrubber.
