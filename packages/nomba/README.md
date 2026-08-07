@@ -2,6 +2,12 @@
 
 Nomba connector — normalizes webhooks and transaction-record API responses into `StandardizedTransaction`. The flagship connector, built from Owoore production experience.
 
+**npm:** [@pay-normalize/nomba](https://www.npmjs.com/package/@pay-normalize/nomba) · **repo:** [github.com/lordisrael1/pay-normalize](https://github.com/lordisrael1/pay-normalize)
+
+```bash
+npm i @pay-normalize/nomba
+```
+
 > **Status: EXPERIMENTAL** (connector `version: "0.1.0"`). The signature scheme is validated **byte-for-byte against Nomba's published golden vector**, and transaction-record fixtures are **sanitized real production records**. Webhook fixtures remain docs-derived until real captures are donated; it graduates then ([NOT_DOING.md §11](../../NOT_DOING.md)).
 
 ```ts

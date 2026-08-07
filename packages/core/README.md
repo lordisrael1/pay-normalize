@@ -2,6 +2,12 @@
 
 The contract. Every connector depends on this package and nothing else; hosts import the shared types, the money helpers, and the ordering/dedupe primitives from here.
 
+**npm:** [@pay-normalize/core](https://www.npmjs.com/package/@pay-normalize/core) · **repo:** [github.com/lordisrael1/pay-normalize](https://github.com/lordisrael1/pay-normalize)
+
+```bash
+npm i @pay-normalize/core
+```
+
 - Data model & design rationale: [../../docs/ARCHITECTURE.md](../../docs/ARCHITECTURE.md)
 - Host wiring: [../../docs/INTEGRATION.md](../../docs/INTEGRATION.md)
 

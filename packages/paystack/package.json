@@ -24,7 +24,22 @@
     "typecheck": "tsc --noEmit -p .",
     "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "paystack",
+    "paystack-webhook",
+    "paystack-api",
+    "pay-normalize",
+    "payments",
+    "payment-webhook",
+    "webhook",
+    "webhook-verification",
+    "hmac",
+    "signature-verification",
+    "charge-success",
+    "fintech",
+    "nigeria",
+    "typescript"
+  ],
   "author": "",
   "license": "ISC",
   "description": "Paystack connector for pay-normalize: webhooks and verify-transaction responses.",

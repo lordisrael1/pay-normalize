@@ -24,7 +24,21 @@
     "typecheck": "tsc --noEmit -p .",
     "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "nomba",
+    "nomba-webhook",
+    "nomba-api",
+    "pay-normalize",
+    "payments",
+    "payment-webhook",
+    "webhook",
+    "webhook-verification",
+    "hmac",
+    "signature-verification",
+    "fintech",
+    "nigeria",
+    "typescript"
+  ],
   "author": "",
   "license": "ISC",
   "description": "Nomba connector for pay-normalize: webhooks and transaction-record API responses (EXPERIMENTAL).",

@@ -2,6 +2,12 @@
 
 Flutterwave **v4** connector — normalizes webhooks, retrieve-charge responses, and settlement API responses into `StandardizedTransaction`.
 
+**npm:** [@pay-normalize/flutterwave](https://www.npmjs.com/package/@pay-normalize/flutterwave) · **repo:** [github.com/lordisrael1/pay-normalize](https://github.com/lordisrael1/pay-normalize)
+
+```bash
+npm i @pay-normalize/flutterwave
+```
+
 > **Status: EXPERIMENTAL** (connector `version: "0.1.0"`). The signature scheme is confirmed against Flutterwave's authoritative docs and the connector matches it, but fixtures are docs-derived. Graduation still wants one real signed delivery **with headers** ([NOT_DOING.md §11](../../NOT_DOING.md)).
 
 ```ts

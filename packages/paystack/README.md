@@ -2,6 +2,12 @@
 
 Paystack connector — normalizes webhooks and verify-transaction responses into `StandardizedTransaction`.
 
+**npm:** [@pay-normalize/paystack](https://www.npmjs.com/package/@pay-normalize/paystack) · **repo:** [github.com/lordisrael1/pay-normalize](https://github.com/lordisrael1/pay-normalize)
+
+```bash
+npm i @pay-normalize/paystack
+```
+
 > **Status: production-backed for `charge.success`** (card and bank_transfer channels) — real, captured-and-sanitized webhook deliveries; see `fixtures/webhooks/prod.sanitized.*`. `transfer.success`/`transfer.reversed`/`refund.processed` are currently backed by docs-derived fixtures. Per [NOT_DOING.md §11](../../NOT_DOING.md), each event family graduates independently as real deliveries are donated.
 
 ```ts

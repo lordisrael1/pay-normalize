@@ -30,13 +30,13 @@ The **fixture corpus is the moat**; the code is scaffolding. See [NOT_DOING.md](
 
 This is an npm workspace monorepo. `core` is the contract; each provider is an isolated, independently-versioned connector that depends only on `core`.
 
-| Package | Status | Purpose |
-|---|---|---|
-| [`@pay-normalize/core`](packages/core/README.md) | Contract | Schema, money (`Kobo`), status ordering, dedupe, errors, the `Connector` interface |
-| [`@pay-normalize/paystack`](packages/paystack/README.md) | Partially graduated | Paystack webhooks + verify-transaction responses |
-| [`@pay-normalize/nomba`](packages/nomba/README.md) | Experimental | Nomba webhooks + transaction-record API responses |
-| [`@pay-normalize/flutterwave`](packages/flutterwave/README.md) | Experimental | Flutterwave v4 webhooks, retrieve-charge, settlements |
-| [`@pay-normalize/monnify`](packages/monnify/README.md) | Experimental | Monnify webhooks (collection, disbursement, settlement) + transaction-status API |
+| Package | npm | Status | Purpose |
+|---|---|---|---|
+| [`@pay-normalize/core`](packages/core/README.md) | [npmjs.com](https://www.npmjs.com/package/@pay-normalize/core) | Contract | Schema, money (`Kobo`), status ordering, dedupe, errors, the `Connector` interface |
+| [`@pay-normalize/paystack`](packages/paystack/README.md) | [npmjs.com](https://www.npmjs.com/package/@pay-normalize/paystack) | Partially graduated | Paystack webhooks + verify-transaction responses |
+| [`@pay-normalize/nomba`](packages/nomba/README.md) | [npmjs.com](https://www.npmjs.com/package/@pay-normalize/nomba) | Experimental | Nomba webhooks + transaction-record API responses |
+| [`@pay-normalize/flutterwave`](packages/flutterwave/README.md) | [npmjs.com](https://www.npmjs.com/package/@pay-normalize/flutterwave) | Experimental | Flutterwave v4 webhooks, retrieve-charge, settlements |
+| [`@pay-normalize/monnify`](packages/monnify/README.md) | [npmjs.com](https://www.npmjs.com/package/@pay-normalize/monnify) | Experimental | Monnify webhooks (collection, disbursement, settlement) + transaction-status API |
 
 **All connectors start `EXPERIMENTAL` (connector `version: "0.1.0"`).** Per [NOT_DOING.md §11](NOT_DOING.md), a connector graduates out of experimental only when its fixture corpus contains sanitized *real* production payloads — not docs-derived ones, and graduation is per event family, not all-or-nothing. Nomba is furthest along (signature validated byte-for-byte against Nomba's golden vector; transaction-record fixtures are sanitized production data). Paystack's `charge.success` (card + bank_transfer) now has real captured-and-sanitized webhook fixtures; its `transfer.*`/`refund.processed` paths remain docs-derived. Flutterwave's signature scheme is confirmed against Flutterwave's authoritative docs but still wants one real signed delivery.
 
@@ -44,13 +44,22 @@ This is an npm workspace monorepo. `core` is the contract; each provider is an i
 
 ## Install
 
-> Not yet published to npm; consumed today as a workspace. Intended package names are shown above.
+Published on npm under the [`@pay-normalize`](https://www.npmjs.com/search?q=pay-normalize) scope. Install `core` plus whichever connectors you need:
 
 ```bash
-npm install
+npm install @pay-normalize/core @pay-normalize/paystack
+npm install @pay-normalize/nomba @pay-normalize/flutterwave @pay-normalize/monnify
 ```
 
-Requirements: **Node 18+** (uses `node:crypto` `timingSafeEqual` and Web-standard `Buffer`), ESM only (`"type": "module"`). Packages expose TypeScript source directly (`main` → `./src/index.ts`) and are consumed in a TS/bundler context.
+| Package | Install |
+|---|---|
+| [@pay-normalize/core](https://www.npmjs.com/package/@pay-normalize/core) | `npm i @pay-normalize/core` |
+| [@pay-normalize/paystack](https://www.npmjs.com/package/@pay-normalize/paystack) | `npm i @pay-normalize/paystack` |
+| [@pay-normalize/nomba](https://www.npmjs.com/package/@pay-normalize/nomba) | `npm i @pay-normalize/nomba` |
+| [@pay-normalize/flutterwave](https://www.npmjs.com/package/@pay-normalize/flutterwave) | `npm i @pay-normalize/flutterwave` |
+| [@pay-normalize/monnify](https://www.npmjs.com/package/@pay-normalize/monnify) | `npm i @pay-normalize/monnify` |
+
+Requirements: **Node 18+** (uses `node:crypto` `timingSafeEqual` and Web-standard `Buffer`), ESM only (`"type": "module"`). Packages ship bundled ESM plus `.d.ts` (`main` → `./dist/index.js`); TypeScript types are included, no `@types` package needed.
 
 ---
 

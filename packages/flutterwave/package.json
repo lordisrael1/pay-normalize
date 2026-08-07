@@ -24,7 +24,22 @@
     "typecheck": "tsc --noEmit -p .",
     "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "flutterwave",
+    "flutterwave-webhook",
+    "flutterwave-v4",
+    "pay-normalize",
+    "payments",
+    "payment-webhook",
+    "webhook",
+    "webhook-verification",
+    "hmac",
+    "signature-verification",
+    "settlements",
+    "fintech",
+    "nigeria",
+    "typescript"
+  ],
   "author": "",
   "license": "ISC",
   "description": "Flutterwave v4 connector for pay-normalize: webhooks, retrieve-charge, and settlements (EXPERIMENTAL).",

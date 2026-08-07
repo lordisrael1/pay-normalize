@@ -2,6 +2,12 @@
 
 Monnify (Moniepoint) connector — normalizes webhooks and the Get-Transaction-Status API response into `StandardizedTransaction`.
 
+**npm:** [@pay-normalize/monnify](https://www.npmjs.com/package/@pay-normalize/monnify) · **repo:** [github.com/lordisrael1/pay-normalize](https://github.com/lordisrael1/pay-normalize)
+
+```bash
+npm i @pay-normalize/monnify
+```
+
 > **Status: EXPERIMENTAL** (connector `version: "0.1.0"`). Fixtures are docs-derived. Graduation needs sanitized real captures **with headers and exact bytes** — see the signature caveat below ([NOT_DOING.md §11](../../NOT_DOING.md)).
 
 ```ts
