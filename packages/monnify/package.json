@@ -1,6 +1,6 @@
 {
   "name": "@pay-normalize/monnify",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -59,7 +59,7 @@
     "typescript": "6.0.3"
   },
   "dependencies": {
-    "@pay-normalize/core": "0.1.1",
+    "@pay-normalize/core": "0.1.2",
     "zod": "4.4.3"
   }
 }
